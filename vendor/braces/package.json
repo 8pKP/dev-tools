@@ -1,0 +1,17 @@
+{
+  "name": "braces",
+  "version": "3.0.4",
+  "description": "Local patch of braces 3.0.3 that rejects brace nesting deeper than 100 (CVE-2026-93687). Not an upstream release.",
+  "license": "MIT",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "engines": {
+    "node": ">=8"
+  },
+  "dependencies": {
+    "fill-range": "^7.1.1"
+  }
+}
