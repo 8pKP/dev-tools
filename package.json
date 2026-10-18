@@ -11,8 +11,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "braces": "file:vendor/braces",
     "js-base64": "^3.7.8",
     "material-design-icons-iconfont": "^6.7.0",
+    "node-forge": "file:vendor/node-forge",
     "moment": "^2.31.0",
     "moment-timezone": "^0.6.0",
     "nuxt": "^4.4.7",
@@ -23,5 +25,9 @@
   "devDependencies": {
     "@nuxtjs/color-mode": "^3.5.2",
     "@nuxtjs/tailwindcss": "7.0.0-beta.1"
+  },
+  "overrides": {
+    "braces": "$braces",
+    "node-forge": "$node-forge"
   }
 }

@@ -1,0 +1,10 @@
+{
+  "name": "node-forge",
+  "version": "1.4.1-0",
+  "description": "Local patch of node-forge 1.4.0 that rejects extra nested DigestAlgorithm elements during RSA PKCS#1 v1.5 verification (CVE-2026-85393). Matches digitalbazaar/forge#1152. Not an upstream release.",
+  "license": "(BSD-3-Clause OR GPL-2.0)",
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">= 6.13.0"
+  }
+}
