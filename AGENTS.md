@@ -81,3 +81,10 @@ Network access can be restricted in the agent harness; avoid adding dependencies
 ## File Ownership
 
 This `AGENTS.md` governs the repository root. More specific `AGENTS.md` files placed in subdirectories may override guidance for files within their scope.
+
+## Cursor Cloud specific instructions
+
+- Nuxt 4.6 (resolved from `nuxt@^4.4.7`) requires Node `^22.22.3`. The Cloud Agent environment installs Node 22.23.3 at `$HOME/.local/node-v22.23.3-linux-x64` and prepends that `bin` directory in `/etc/profile.d/devtools-node.sh`. Use that Node for `npm` commands. `/exec-daemon/node` on the default image can be 22.14.0, which Nuxt rejects.
+- `package.json` pins `packageManager` to npm 11.12.1. `corepack enable npm` selects that npm. Install with `npm ci` (lockfile). `postinstall` runs `nuxt prepare`.
+- The environment start command serves the dev app at `http://127.0.0.1:3000` with `NUXT_TELEMETRY_DISABLED=1`. Without that variable, `nuxt dev` stops on an interactive telemetry consent prompt. Command: `npm run dev -- --host 0.0.0.0 --port 3000`.
+- There is no automated test script. `npm run build` is the production check. The app is client-side (`ssr: false` in `nuxt.config.ts`) and does not use secrets, databases, or external APIs.
